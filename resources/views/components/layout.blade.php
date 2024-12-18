@@ -27,7 +27,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-t from-[#F0E3CA] to-[#F0E3CA] h-screen flex flex-col">
+<body class="bg-[#FBF6E9] h-screen flex flex-col">
     <!-- Navbar -->
     <x-navbar></x-navbar>
     <!-- Carousel -->

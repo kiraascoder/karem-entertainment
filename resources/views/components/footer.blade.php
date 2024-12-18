@@ -1,5 +1,5 @@
 <div>
-    <footer class="bg-[#1B1A17] text-white mt-5 py-4">
+    <footer class="bg-[#1B1A17] text-white mt-5 py-4 font-scope-one">
         <div class="container flex flex-col items-center text-center">
             <div class="logo w-25 p-2">
                 <img src="{{ asset('img/logo/logo.png') }}" alt="">

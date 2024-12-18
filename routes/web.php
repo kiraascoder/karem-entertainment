@@ -22,12 +22,8 @@ Route::get('/review', function () {
     return view('review');
 });
 
-Route::get('/account', function () {
-
-    return view('account');
-})->name('account');
-Route::get('/category', function () {
-    return view('category');
+Route::get('/categories', function () {
+    return view('categories');
 });
 Route::get('/edit-account', function () {
     return view('editaccount');
@@ -37,7 +33,6 @@ Route::get('/order-list', function () {
     return view('order-list');
 });
 
-// Rute untuk Manager, Management, dan Order List
 Route::middleware(['auth'])->group(function () {
     Route::get('/manager', [SesiController::class, 'index'])->middleware('userAkses:manager');
     Route::get('/management', function () {
@@ -46,27 +41,22 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orderlist', function () {
         return view('orderlist');
     });
-
-    // Team Routes (Hanya untuk eventorganizer)
     Route::get('/team', [SesiController::class, 'team'])->middleware('userAkses:eventorganizer');
-
-    // Logout Route
     Route::get('/logout', [SesiController::class, 'logout']);
-
-    // Menampilkan form untuk membuat tim
     Route::get('/create-team', [TeamController::class, 'createTeamForm'])->name('team.createForm');
-    // Menangani pengiriman form pembuatan tim
     Route::post('/create-team', [TeamController::class, 'createTeam'])->name('team.create');
     Route::post('/user/{userId}/role', [TeamController::class, 'updateRole'])->name('user.updateRole');
-    Route::get('/manager', [TeamController::class, 'showManagerPage'])->name('manager.page');
+    Route::get('/manager', [TeamController::class, 'showManagerPage'])->name('manager.page')->middleware('userAkses:manager');
+    Route::get('/account', function () {
+
+        return view('account');
+    })->name('account');
 });
 
-// Halaman Register dan Login untuk Guest
+
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [SesiController::class, 'vlogin'])->name('login');
     Route::post('/login', [SesiController::class, 'login']);
-
-    // Register Routes
     Route::get('/register', [SesiController::class, 'showRegistrationForm'])->name('registerForm');
     Route::post('/register', [SesiController::class, 'register'])->name('register');
 });

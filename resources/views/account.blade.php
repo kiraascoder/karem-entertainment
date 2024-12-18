@@ -1,68 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layout>
+    <section id="account" class="container pt-5 font-scope-one">
+        <!-- Menampilkan nama pengguna yang login -->
+        <h2 class="text-center mb-4 font-bold">Halo, {{ Auth::user()->name }}</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Karem Entertainment</title>
-
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Inter font -->
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Scope+One&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-
-    <!-- Vite CSS (if applicable) -->
-    @vite('resources/css/app.css')
-
-    <!-- Bootstrap CSS (for carousel) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body class="bg-gradient-to-t from-[#F0E3CA] to-[#F0E3CA] h-screen">
-    <section id="booking" class="container pt-5">
-        <h2 class="text-center mb-4">Halo Pengguna</h2>
         <div class="text-center mt-4">
-            <button class="btn btn-primary">Edit</button>
-        </div>
-        <div class="user-info flex justify-center items-center space-x-8">
-            <div class="your-gallery text-center">
-                <p>Your Gallery</p>
-                <div class="review">
-                    <a href="#"
-                        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tech
-                            Innovations in 2022</h5>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">Exploring the most groundbreaking
-                            technological innovations of 2022.</p>
-                    </a>
-                </div>
+            <div class="flex gap-2 justify-center p-2">
+                <a href="edit-account">
+                    <button
+                        class="bg-[#FF8303] text-[#1B1A17] font-bold px-5 py-2 rounded-full hover:bg-[#EEEDEB] ease-out duration-300">
+                        Edit Your Account
+                    </button>
+                </a>
+
+                <a href="/logout">
+                    <button
+                        class="bg-[#FF8303] text-[#1B1A17] font-bold px-5 py-2 rounded-full hover:bg-[#EEEDEB] ease-out duration-300">
+                        Log Out
+                    </button>
+                </a>
+
             </div>
+
+        </div>
+
+        <div class="user-info flex justify-center items-center space-x-8 mt-4">
             <div class="booking-status text-center">
-                <p>Booking Status</p>
-                <div class="review">
-                    <a href="#"
-                        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Tech
-                            Innovations in 2022</h5>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">Exploring the most groundbreaking
-                            technological innovations of 2022.</p>
-                    </a>
+                <h4 class="font-bold">Booking Status</h4>
+                <div class="status">
+
+                    <div
+                        class="block max-w-sm p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100 bg-[#1B1A17] dark:border-gray-700 dark:hover:bg-gray-700 mx-auto">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Project Name
+                        </h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400 no-underline">Lorem ipsum, dolor sit amet
+                            consectetur adipisicing elit. Tempore necessitatibus consequuntur itaque nostrum officiis
+                            similique totam mollitia, repellat laboriosam accusantium sapiente veritatis eos a sint nam
+                            temporibus. Quo, harum nisi.</p>
+                    </div>
                 </div>
             </div>
         </div>
+
     </section>
-
-    <x-footer></x-footer>
-
-</body>
-
-</html>
+</x-layout>

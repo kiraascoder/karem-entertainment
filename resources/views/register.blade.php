@@ -6,17 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login | Karem Entertainment</title>
-
-    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Inter font -->
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-
-    <!-- Vite CSS (if applicable) -->
     @vite('resources/css/app.css')
-
-    <!-- Bootstrap CSS (for carousel) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 

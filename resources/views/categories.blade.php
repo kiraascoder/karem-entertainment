@@ -1,50 +1,119 @@
 <x-layout>
-    <section id="booking" class="container mt-12 pt-5">
-        <h2 class="text-center mb-4">Gallery</h2>
+    <div class="w-full h-[50vh] bg-[#1B1A17] font-scope-one">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-white text-6xl font-bold mb-4">Category</h1>
+            <div class="flex gap-4">
 
-        <div class="gallery_post">
-            <div class="container mt-5 ">
-                <h2 class="text-3xl font-bold mb-4 text-center mt-2">Gallery Posts</h2>
-                <div class="mx-auto">
-                    <div class="row">
-                        <!-- First Row -->
-                        <div class="col-md-4 mb-4">
-                            <img src="image1.jpg" class="img-fluid" alt="Image 1">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="image2.jpg" class="img-fluid" alt="Image 2">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="image3.jpg" class="img-fluid" alt="Image 3">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- Second Row -->
-                        <div class="col-md-4 mb-4">
-                            <img src="image4.jpg" class="img-fluid" alt="Image 4">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="image5.jpg" class="img-fluid" alt="Image 5">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="image6.jpg" class="img-fluid" alt="Image 6">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- Third Row -->
-                        <div class="col-md-4 mb-4">
-                            <img src="image4.jpg" class="img-fluid" alt="Image 4">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="image5.jpg" class="img-fluid" alt="Image 5">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="image6.jpg" class="img-fluid" alt="Image 6">
-                        </div>
-                    </div>
+                <div class="w-full md:w-1/2 h-64 flex justify-center items-center">
+                    <img src="{{ asset('img/carousel/carousel1.jpg') }}" alt="Gambar"
+                        class="object-cover w-full h-full rounded-lg shadow-md">
+                </div>
+
+                <div class="desc w-full md:w-1/2 h-64 text-white flex flex-col">
+                    <p class="text-sm">Sat, 5 October 2024</p>
+                    <h1 class="text-2xl font-bold">Kareem Entertainment Project</h1>
+                    <p class="text-justify text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+                        ipsa dolor
+                        modi facilis fuga cum, fugit quaerat voluptatum suscipit deleniti sint? Maiores velit debitis
+                        consequatur
+                        repudiandae, quidem voluptatem dicta cum!</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- Projects Section -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+            <div class="project">
+                <div
+                    class="block p-6 border border-gray-200 rounded-lg shadow-lg bg-[#1B1A17] dark:border-gray-700 dark:bg-[#2C2C2C]">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Project 1</h5>
+                    <p class="font-normal text-gray-300 dark:text-gray-400">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore necessitatibus consequuntur
+                        itaque
+                        nostrum officiis similique totam mollitia, repellat laboriosam accusantium sapiente veritatis
+                        eos a sint nam
+                        temporibus. Quo, harum nisi.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div
+                    class="block p-6 border border-gray-200 rounded-lg shadow-lg bg-[#1B1A17] dark:border-gray-700 dark:bg-[#2C2C2C]">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Project 2</h5>
+                    <p class="font-normal text-gray-300 dark:text-gray-400">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore necessitatibus consequuntur
+                        itaque
+                        nostrum officiis similique totam mollitia, repellat laboriosam accusantium sapiente veritatis
+                        eos a sint nam
+                        temporibus. Quo, harum nisi.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div
+                    class="block p-6 border border-gray-200 rounded-lg shadow-lg bg-[#1B1A17] dark:border-gray-700 dark:bg-[#2C2C2C]">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Project 3</h5>
+                    <p class="font-normal text-gray-300 dark:text-gray-400">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore necessitatibus consequuntur
+                        itaque
+                        nostrum officiis similique totam mollitia, repellat laboriosam accusantium sapiente veritatis
+                        eos a sint nam
+                        temporibus. Quo, harum nisi.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div
+                    class="block p-6 border border-gray-200 rounded-lg shadow-lg bg-[#1B1A17] dark:border-gray-700 dark:bg-[#2C2C2C]">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Project 4</h5>
+                    <p class="font-normal text-gray-300 dark:text-gray-400">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore necessitatibus consequuntur
+                        itaque
+                        nostrum officiis similique totam mollitia, repellat laboriosam accusantium sapiente veritatis
+                        eos a sint nam
+                        temporibus. Quo, harum nisi.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div
+                    class="block p-6 border border-gray-200 rounded-lg shadow-lg bg-[#1B1A17] dark:border-gray-700 dark:bg-[#2C2C2C]">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Project 5</h5>
+                    <p class="font-normal text-gray-300 dark:text-gray-400">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore necessitatibus consequuntur
+                        itaque
+                        nostrum officiis similique totam mollitia, repellat laboriosam accusantium sapiente veritatis
+                        eos a sint nam
+                        temporibus. Quo, harum nisi.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div
+                    class="block p-6 border border-gray-200 rounded-lg shadow-lg bg-[#1B1A17] dark:border-gray-700 dark:bg-[#2C2C2C]">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Project 6</h5>
+                    <p class="font-normal text-gray-300 dark:text-gray-400">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore necessitatibus consequuntur
+                        itaque
+                        nostrum officiis similique totam mollitia, repellat laboriosam accusantium sapiente veritatis
+                        eos a sint nam
+                        temporibus. Quo, harum nisi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-layout>

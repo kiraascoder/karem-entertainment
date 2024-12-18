@@ -24,13 +24,13 @@ class SesiController extends Controller
     {
         return view('team');
     }
-    // Proses login
+
     function login(Request $request)
     {
-        // Validasi input
+
         $request->validate([
-            'email' => 'required|email', // Validasi email harus ada dan dalam format yang benar
-            'password' => 'required|min:6', // Validasi password minimal 6 karakter
+            'email' => 'required|email',
+            'password' => 'required|min:6',
         ], [
             'email.required' => 'Silahkan Masukkan Email Anda',
             'email.email' => 'Format email yang Anda masukkan tidak valid',
@@ -38,13 +38,13 @@ class SesiController extends Controller
             'password.min' => 'Password minimal terdiri dari 6 karakter',
         ]);
 
-        // Data login
+
         $infologin = [
             'email' => $request->email,
             'password' => $request->password,
         ];
 
-        // Mencoba login
+
         if (Auth::attempt($infologin, $request->has('remember'))) {
             if (Auth::user()->role == 'manager') {
                 return redirect('/manager');
@@ -58,22 +58,22 @@ class SesiController extends Controller
         }
     }
 
-    // Logout
+
     function logout()
     {
         Auth::logout();
         return redirect('/login');
     }
 
-    // Regist View
+
     public function showRegistrationForm()
     {
         return view('register');
     }
-    // Proses registrasi
+
     public function register(Request $request)
     {
-        // Validasi input
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
@@ -88,17 +88,17 @@ class SesiController extends Controller
             'password.confirmed' => 'Konfirmasi password tidak cocok',
         ]);
 
-        // Mendaftar pengguna baru
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);  // Menggunakan hash untuk menyimpan password
-        $user->role = 'user';  // Set role default sebagai 'user'
+        $user->password = Hash::make($request->password);
+        $user->role = 'user';
         $user->save();
 
-        // Login otomatis setelah registrasi
+
         Auth::login($user);
 
-        return redirect('/');  // Arahkan pengguna ke halaman utama setelah berhasil registrasi
+        return redirect('/');
     }
 }

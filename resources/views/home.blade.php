@@ -1,9 +1,6 @@
 <x-layout>
     <div class="carousel_container relative">
-        <!-- Overlay gradient -->
         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
-
-        <!-- Teks di kanan bawah -->
         <div class="absolute bottom-0 right-0 mb-8 mr-8 text-white text-3xl font-bold z-20"
             style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);">
             <h1 class="text-9xl">We Are</h1>
@@ -32,18 +29,10 @@
             </button>
         </div>
     </div>
-
-
-
-
-    <!-- Teks pengganti untuk perangkat mobile -->
     <div class="md:hidden block text-center p-4 bg-gray-100 border border-gray-300 rounded-lg">
         <p class="text-xl font-semibold text-gray-800">Ini adalah teks pengganti pada perangkat mobile!</p>
     </div>
     </div>
-
-
-
 
     <div class="category mt-4">
         <h2 class="text-3xl font-bold mb-4 text-center mt-2 font-scope-one">Categories</h2>
@@ -66,7 +55,6 @@
                             style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);">Event Organizer</h1>
                     </div>
                 </div>
-                <!-- Column 2, Row 1 -->
                 <div
                     class="col-md-6 mb-4 group relative items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
                     <div class="card h-100 border-none">
@@ -85,7 +73,6 @@
             </div>
 
             <div class="row">
-                <!-- Column 1, Row 2 -->
                 <div
                     class="col-md-6 mb-4 group relative items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
                     <div class="card h-100 border-none">
@@ -101,8 +88,6 @@
                             style="text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);">Dokumentasi</h1>
                     </div>
                 </div>
-
-                <!-- Column 2, Row 2 -->
                 <div
                     class="col-md-6 mb-4 group relative items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
                     <div class="card h-100 border-none"> <!-- Menghilangkan border -->
@@ -136,7 +121,6 @@
         <div class="container">
             <h2 class="text-3xl font-bold mb-4 text-center mt-2 font-scope-one">Gallery Posts</h2>
             <div class="row">
-                <!-- First Row -->
                 <div class="col-md-4 mb-4">
                     <img src="image1.jpg" class="img-fluid" alt="Image 1">
                 </div>
@@ -148,7 +132,6 @@
                 </div>
             </div>
             <div class="row">
-                <!-- Second Row -->
                 <div class="col-md-4 mb-4">
                     <img src="image4.jpg" class="img-fluid" alt="Image 4">
                 </div>

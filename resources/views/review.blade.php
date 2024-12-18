@@ -3,7 +3,7 @@
         <h2 class="text-center mb-4 font-bold">Apa Kata Mereka?</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Review 1 -->
+
             <div class="review">
                 <div
                     class="block max-w-sm p-6  border border-gray-200 rounded-lg shadow hover:bg-gray-100 bg-[#1B1A17] dark:border-gray-700 dark:hover:bg-gray-700">

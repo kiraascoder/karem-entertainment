@@ -9,9 +9,9 @@ class Team extends Model
 {
     use HasFactory;
 
-    // Menambahkan kolom 'name' ke dalam fillable
+    
     protected $fillable = ['name', 'manager_id']; // Pa
-    // Relasi dengan model User (Manager)
+    
     public function manager()
     {
         return $this->belongsTo(User::class, 'manager_id');

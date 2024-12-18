@@ -20,14 +20,14 @@
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                 <ul class="flex flex-col font-medium md:p-0 md:flex-row md:mt-0 md:border-0 md:bg-white mt-2">
-                    <!-- Menu untuk semua pengguna (termasuk yang belum login) -->
+
                     <li>
                         <a href="/gallery"
                             class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
                             aria-current="page">Gallery</a>
                     </li>
                     @guest
-                        <!-- Menu untuk pengunjung yang belum login -->
+
                         <li>
                             <a href="/booking"
                                 class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Booking</a>
@@ -37,7 +37,6 @@
                                 class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Review</a>
                         </li>
                     @else
-                        <!-- Menu untuk pengguna yang sudah login -->
                         @if (Auth::user()->role == 'manager')
                             <li>
                                 <a href="/management"
@@ -65,7 +64,7 @@
                             </li>
                         @endif
                     @endguest
-                    <!-- Menu About Us (terlihat untuk semua pengguna) -->
+
                     <li>
                         <a href="/about"
                             class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">About

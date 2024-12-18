@@ -1,7 +1,5 @@
 <header class="bg-[#1B1A17] sticky top-0 z-50">
     <nav class="flex justify-between items-center w-[92%] mx-auto font-scope-one">
-
-        <!-- Logo Section -->
         <div class="w-16 p-4">
             <div class="w-32">
                 <a href="/">
@@ -19,9 +17,8 @@
                         href="/gallery">Gallery</a>
                 </li>
 
-                <!-- Display different links depending on login state -->
                 @guest
-                    <!-- For guests (not logged in) -->
+
                     <li>
                         <a class="hover:text-gray-500 text-inherit no-underline font-bold text-xl text-[#F0E3CA]"
                             href="/booking">Booking</a>
@@ -31,7 +28,6 @@
                             href="/review">Review</a>
                     </li>
                 @else
-                    <!-- For logged-in users -->
                     @if (Auth::user()->role == 'manager')
                         <li>
                             <a class="hover:text-gray-500 text-inherit no-underline font-bold text-xl text-[#F0E3CA]"
@@ -58,7 +54,7 @@
                     @endif
                 @endguest
 
-                <!-- About Us Link (visible to all users) -->
+
                 <li>
                     <a class="hover:text-gray-500 text-inherit no-underline font-bold text-xl text-[#F0E3CA]"
                         href="/about-us">About Us</a>
@@ -83,7 +79,7 @@
                 </a>
             @endauth
 
-            <!-- Hamburger Menu for Mobile -->
+
             <img src="{{ asset('img/icon/burger-bar.png') }}" onclick="onToggleMenu(this)" name="menu"
                 class="text-3xl cursor-pointer md:hidden w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" alt="">
         </div>

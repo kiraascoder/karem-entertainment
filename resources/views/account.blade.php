@@ -1,6 +1,6 @@
 <x-layout>
     <section id="account" class="container pt-5 font-scope-one">
-        <!-- Menampilkan nama pengguna yang login -->
+
         <h2 class="text-center mb-4 font-bold">Halo, {{ Auth::user()->name }}</h2>
 
         <div class="text-center mt-4">

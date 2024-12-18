@@ -9,8 +9,8 @@ class TeamMember extends Model
 {
     use HasFactory;
 
-    // Menambahkan kolom 'team_id' dan 'user_id' ke dalam fillable
-    protected $fillable = ['team_id', 'user_id']; // Pastikan 'team_id' dan 'user_id' ada di sini
+    
+    protected $fillable = ['team_id', 'user_id'];
 
-    // Kolom lainnya yang diizinkan mass assignment bisa ditambahkan di sini
+    
 }

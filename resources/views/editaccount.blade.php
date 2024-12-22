@@ -36,11 +36,6 @@
                             placeholder="Confirm your password">
                     </div>
                 </div>
-
-
-
-
-
                 <div class="text-center mt-2">
                     <button
                         class="bg-[#FF8303] text-[#1B1A17] font-bold px-5 py-2 rounded-full hover:bg-[#EEEDEB] ease-out duration-300">

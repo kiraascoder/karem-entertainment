@@ -25,14 +25,7 @@
     <x-footer></x-footer>
     <!-- Bootstrap JS (for carousel functionality) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const navLinks = document.querySelector('.nav-links')
 
-        function onToggleMenu(e) {
-            e.name = e.name === 'menu' ? 'close' : 'menu'
-            navLinks.classList.toggle('top-[9%]')
-        }
-    </script>
 </body>
 
 </html>

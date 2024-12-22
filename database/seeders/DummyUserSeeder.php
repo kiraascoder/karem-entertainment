@@ -17,11 +17,17 @@ class DummyUserSeeder extends Seeder
 
 
             [
-                'name' => 'Manager',
-                'email' => 'manager@gmail.com',
+                'name' => 'Terror',
+                'email' => 'Terror@gmail.com',
                 'password' => bcrypt('password123'),
-                'role' => 'manager'
-            ]
+                'role' => 'eventorganizer',
+            ],
+            [
+                'name' => 'Arthas',
+                'email' => 'arthas@gmail.com',
+                'password' => bcrypt('password123'),
+                'role' => 'eventorganizer',
+            ],
 
         ];
 

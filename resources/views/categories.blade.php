@@ -3,12 +3,10 @@
         <div class="container mx-auto px-4 py-6">
             <h1 class="text-white text-6xl font-bold mb-4">Category</h1>
             <div class="flex gap-4">
-
                 <div class="w-full md:w-1/2 h-64 flex justify-center items-center">
                     <img src="{{ asset('img/carousel/carousel1.jpg') }}" alt="Gambar"
                         class="object-cover w-full h-full rounded-lg shadow-md">
                 </div>
-
                 <div class="desc w-full md:w-1/2 h-64 text-white flex flex-col">
                     <p class="text-sm">Sat, 5 October 2024</p>
                     <h1 class="text-2xl font-bold">Kareem Entertainment Project</h1>

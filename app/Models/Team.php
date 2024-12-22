@@ -8,17 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'manager_id', 'order_id']; // Pa
 
-    
-    protected $fillable = ['name', 'manager_id']; // Pa
-    
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
     public function manager()
     {
         return $this->belongsTo(User::class, 'manager_id');
     }
     public function members()
     {
-        return $this->belongsToMany(User::class, 'team_members');
+        return $this->belongsToMany(User::class);
     }
-    
 }

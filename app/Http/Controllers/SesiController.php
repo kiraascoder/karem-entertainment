@@ -73,11 +73,11 @@ class SesiController extends Controller
 
     public function register(Request $request)
     {
-
+        // Validate input data
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|string|min:6|confirmed',
         ], [
             'name.required' => 'Nama wajib diisi',
             'email.required' => 'Silahkan Masukkan Email Anda',
@@ -85,20 +85,19 @@ class SesiController extends Controller
             'email.unique' => 'Email sudah terdaftar',
             'password.required' => 'Silahkan Masukkan Password Anda',
             'password.min' => 'Password minimal terdiri dari 6 karakter',
-            'password.confirmed' => 'Konfirmasi password tidak cocok',
+            'password.confirmed' => 'Konfirmasi password tidak sesuai',
         ]);
 
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->role = 'user';
-        $user->save();
-
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         Auth::login($user);
 
-        return redirect('/');
+
+        return redirect('/')->with('success', 'Registrasi berhasil! Selamat datang.');
     }
 }

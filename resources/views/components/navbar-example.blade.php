@@ -23,43 +23,43 @@
 
                     <li>
                         <a href="/gallery"
-                            class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                            class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
                             aria-current="page">Gallery</a>
                     </li>
                     @guest
 
                         <li>
                             <a href="/booking"
-                                class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Booking</a>
+                                class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Booking</a>
                         </li>
                         <li>
                             <a href="/review"
-                                class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Review</a>
+                                class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Review</a>
                         </li>
                     @else
                         @if (Auth::user()->role == 'manager')
                             <li>
                                 <a href="/management"
-                                    class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Management</a>
+                                    class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Management</a>
                             </li>
                             <li>
                                 <a href="/order-list"
-                                    class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Order
+                                    class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Order
                                     List</a>
                             </li>
                         @elseif (Auth::user()->role == 'user')
                             <li>
                                 <a href="/booking"
-                                    class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Booking</a>
+                                    class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Booking</a>
                             </li>
                             <li>
                                 <a href="/review"
-                                    class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Review</a>
+                                    class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Review</a>
                             </li>
                         @elseif (Auth::user()->role == 'eventorganizer')
                             <li>
                                 <a href="/task-list"
-                                    class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Task
+                                    class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">Task
                                     List</a>
                             </li>
                         @endif
@@ -67,7 +67,7 @@
 
                     <li>
                         <a href="/about"
-                            class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">About
+                            class="block py-2 px-3 md:p-0 text-[#F0E3CA] bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500">About
                             Us</a>
                     </li>
                 </ul>

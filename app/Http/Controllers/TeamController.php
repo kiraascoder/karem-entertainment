@@ -2,71 +2,110 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TeamMember;
 use Illuminate\Http\Request;
-use App\Models\Team;
-use Illuminate\Routing\Controller;
 use App\Models\User;
+use App\Models\Team;
+use App\Models\Order;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Routing\Controller;
 
 class TeamController extends Controller
 {
-    public function createTeamForm()
-    {
-        $users = User::all();
-        return view('manager', compact('users'));
-    }
-
-
-    public function createTeam(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'manager_id' => 'required|exists:users,id',  // Pastikan manager ada di tabel users
-        ]);
-
-
-        $team = Team::create([
-            'name' => $request->name,
-            'manager_id' => $request->manager_id,
-        ]);
-
-
-        if ($request->has('members')) {
-            foreach ($request->members as $userId) {
-                TeamMember::create([
-                    'team_id' => $team->id,
-                    'user_id' => $userId,
-                ]);
-            }
-        }
-        return redirect()->route('teams.index')->with('success', 'Team created successfully.');
-    }
-    public function updateRole(Request $request, $userId)
-    {
-        $request->validate([
-            'role' => 'required|in:user,manager,eventorganizer',
-        ]);
-
-        $user = User::findOrFail($userId);
-        $user->role = $request->input('role');
-        $user->save();
-
-        return redirect()->route('users.index')->with('success', 'Role updated successfully.');
-    }
+    // Menampilkan halaman manajer
     public function showManagerPage()
     {
         $users = User::all();
         return view('manager', compact('users'));
     }
-    public function edit($id)
+    // Menampilkan halaman manajemen
+    public function showManagementPage()
     {
-        $team = Team::findOrFail($id);
         $users = User::all();
-        return view('teams.edit', compact('team', 'users'));
+        return view('management', compact('users'));
     }
-    public function index()
+
+    // Menyimpan data user baru
+    public function storeUser(Request $request)
     {
-        $teams = Team::with('members')->get();
-        return view('teams.index', compact('teams'));
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role' => 'eventorganizer',
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->route('manager.page')->with('success', 'User successfully created');
+    }
+
+
+    public function showTeams()
+    {
+        $teams = Team::with('manager', 'order')->get();
+        return view('management', compact('teams'));
+    }
+
+    public function createTeamsView()
+    {
+        $users = User::all();
+        $orders = Order::all();
+        return view('add-teams', compact('users', 'orders'));
+    }
+
+    // Menyimpan tim baru
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'manager_id' => 'required|exists:users,id',
+            'order_id' => 'required|exists:orders,id',
+        ]);
+
+        Team::create([
+            'name' => $request->name,
+            'manager_id' => $request->manager_id,
+            'order_id' => $request->order_id,
+        ]);
+
+        return redirect()->route('management.page')->with('success', 'Team created successfully');
+    }
+
+    // Menampilkan form untuk mengedit tim
+    public function edit(Team $team)
+    {
+        $users = User::all();
+        $orders = Order::all();
+        return view('teams.edit', compact('team', 'users', 'orders'));
+    }
+
+    // Memperbarui tim
+    public function update(Request $request, Team $team)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'manager_id' => 'required|exists:users,id',
+            'order_id' => 'required|exists:orders,id',
+        ]);
+
+        $team->update([
+            'name' => $request->name,
+            'manager_id' => $request->manager_id,
+            'order_id' => $request->order_id,
+        ]);
+
+        return redirect()->route('teams.index')->with('success', 'Team updated successfully');
+    }
+
+    // Menghapus tim
+    public function destroy(Team $team)
+    {
+        $team->delete();
+
+        return redirect()->route('teams.index')->with('success', 'Team deleted successfully');
     }
 }

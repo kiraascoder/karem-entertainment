@@ -3,7 +3,8 @@
 
         <div class="bg-white p-8 rounded-md shadow-md">
             <h2 class="text-center mb-4 font-bold">Book Your Service</h2>
-            <form action="#" method="post">
+            <form action="{{ route('order.store') }}" method="POST">
+                @csrf
                 <div class="row">
 
                     <div class="col-md-6 mb-3">
@@ -45,10 +46,10 @@
                             class="form-select border-2 border-gray-300 focus:ring-2 focus:ring-[#FF8303] rounded-md px-4 py-2"
                             id="service" name="service" required>
                             <option value="">Choose a category</option>
-                            <option value="dokumentasi">Dokumentasi</option>
-                            <option value="event-planner">Event Planner</option>
-                            <option value="event-organizer">Event Organizer</option>
-                            <option value="3d-design">3D Design</option>
+                            <option value="Dokumentasi">Dokumentasi</option>
+                            <option value="Event Planner">Event Planner</option>
+                            <option value="Event Organizer">Event Organizer</option>
+                            <option value="3D Design">3D Design</option>
                         </select>
                     </div>
                 </div>
@@ -62,7 +63,7 @@
 
 
                 <div class="text-center">
-                    <button
+                    <button type="submit"
                         class="bg-[#FF8303] text-[#1B1A17] font-bold px-5 py-2 rounded-full hover:bg-grey ease-out duration-300 font-scope-one">
                         Submit Booking
                     </button>

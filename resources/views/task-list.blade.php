@@ -7,28 +7,24 @@
             <table class="w-full text-sm text-left rtl:text-right text dark:text-gray-400">
                 <thead class="text-xs text-[#EEEDEB] uppercase bg-[#1B1A17]">
                     <tr>
-                        <th scope="col" class="px-6 py-3">Order ID</th>
                         <th scope="col" class="px-6 py-3">Name</th>
                         <th scope="col" class="px-6 py-3">Location</th>
                         <th scope="col" class="px-6 py-3">Phone Number</th>
                         <th scope="col" class="px-6 py-3">Booking Date</th>
                         <th scope="col" class="px-6 py-3">Category</th>
                         <th scope="col" class="px-6 py-3">Status</th>
-                        <th scope="col" class="px-6 py-3">Message</th>
                     </tr>
                 </thead>
                 <tbody class="text-black">
                     @foreach ($orders as $order)
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <td class="px-6 py-4 font-medium whitespace-nowrap">{{ $order->order_id }}</td>
                             <td class="px-6 py-4 font-medium whitespace-nowrap">{{ $order->full_name }}</td>
                             <td class="px-6 py-4">{{ $order->location }}</td>
                             <td class="px-6 py-4">{{ $order->phone_number }}</td>
                             <td class="px-6 py-4">{{ $order->booking_date }}</td>
                             <td class="px-6 py-4">{{ $order->service }}</td>
                             <td class="px-6 py-4">Status</td>
-                            <td class="px-6 py-4">{{ $order->message }}</td>
                             </td>
                         </tr>
                     @endforeach

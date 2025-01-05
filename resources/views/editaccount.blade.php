@@ -1,8 +1,8 @@
 <x-layout>
     <!-- Edit Account Form -->
-    <section id="edit-account" class="container mt-12 pt-5">
+    <section id="edit-account" class="container  pt-5 font-scope-one">
         <div class="bg-white p-8 rounded-md shadow-md">
-            <h2 class="text-center mb-4 font-bold">Book Your Service</h2>
+            <h2 class="text-center mb-4 font-bold f">Edit Account</h2>
 
             <form action="#" method="post">
                 <div class="row">

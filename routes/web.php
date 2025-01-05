@@ -27,9 +27,6 @@ Route::get('/review', function () {
 Route::get('/categories', function () {
     return view('categories');
 });
-Route::get('/edit-account', function () {
-    return view('editaccount');
-});
 
 Route::get('/order-list', function () {
     return view('order-list');
@@ -40,6 +37,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/management', function () {
         return view('management');
     });
+    Route::get('/edit-account', function () {
+        return view('editaccount');
+    });
+
     Route::get('/orderlist', function () {
         return view('orderlist');
     });
@@ -85,6 +86,6 @@ Route::middleware(['userAkses:manager'])->group(function () {
     });
     Route::get('/management/{team}/add-members', [TeamMemberController::class, 'createTeamMemberView'])->name('add-members.page');
     Route::post('management/{teams}/add-members', [TeamMemberController::class, 'addMember'])->name('teams.addMember');
-    Route::post('management/{teams}/add-members', [TeamMemberController::class, 'addMember'])->name('teams.addMember');
-    Route::post('management/{team}/remove-members', [TeamMemberController::class, 'removeMember'])->name('teams.removeMember');
+    Route::patch('/teams/{team}/update-status', [TeamController::class, 'updateStatus'])->name('team.update.status');
+    Route::delete('/delete-employee/{id}', [TeamMemberController::class, 'deleteEmployee'])->name('employee.delete');
 });

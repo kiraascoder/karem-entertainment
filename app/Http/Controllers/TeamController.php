@@ -108,4 +108,30 @@ class TeamController extends Controller
 
         return redirect()->route('teams.index')->with('success', 'Team deleted successfully');
     }
+
+    // Menampilkan Team Member
+    public function showTeamMembers()
+    {
+
+        $teams = Team::with('members')->get();
+
+        return view('management', compact('teams'));
+    }
+    public function updateStatus(Request $request, $teamId)
+    {
+
+        $validated = $request->validate([
+            'progress_status' => 'required|in:not_started,in_progress,completed',
+        ]);
+
+
+        $team = Team::findOrFail($teamId);
+
+        // Update progress_status di tabel orders yang terkait dengan team
+        $team->order->progress_status = $validated['progress_status'];
+        $team->order->save();  // Simpan perubahan status
+
+
+        return redirect()->route('management.page')->with('status', 'Status updated successfully!');
+    }
 }

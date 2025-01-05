@@ -46,11 +46,6 @@
                             <a class="hover:text-gray-500 text-inherit no-underline font-bold text-xl text-[#F0E3CA]"
                                 href="/review">Review</a>
                         </li>
-                    @elseif (Auth::user()->role == 'eventorganizer')
-                        <li>
-                            <a class="hover:text-gray-500 text-inherit no-underline font-bold text-xl text-[#F0E3CA]"
-                                href="/task-list">Task List</a>
-                        </li>
                     @endif
                 @endguest
 
